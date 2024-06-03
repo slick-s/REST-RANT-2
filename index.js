@@ -5,7 +5,14 @@ require('dotenv').config()
 const PORT = process.env.PORT
 const app = express()
 const cors = require('cors')
-app.use(cors())
+const corConfig = {
+    origin: "*",
+    credential: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE' ]
+}
+
+app.options('', cors(corConfig))
+app.use(cors(corConfig))
 
 // Express Settings
 app.set('view engine', 'jsx')
