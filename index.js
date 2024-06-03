@@ -4,6 +4,8 @@ const methodOverride = require('method-override')
 require('dotenv').config()
 const PORT = process.env.PORT
 const app = express()
+const cors = require('cors')
+app.use(cors())
 
 // Express Settings
 app.set('view engine', 'jsx')
